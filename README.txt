@@ -97,3 +97,5 @@ mvn clean -DskipTests package -Pdist,embedded-hbase-solr
 mvn clean -DskipTests package -Pdist
 确认pom文件中hbase-version为:2.1.0-cdh6.3.2 、 solr.version: 7.4.0-cdh6.3.2
 
+
+
