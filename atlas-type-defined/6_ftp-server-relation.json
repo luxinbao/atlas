@@ -1,0 +1,75 @@
+{
+  "classificationDefs": [
+  ],
+  "entityDefs": [
+    
+  ],
+  "relationshipDefs": [
+        {
+            "name": "ftp_server_path",
+            "serviceType": "file_system",
+            "typeVersion": "1.2",
+            "relationshipCategory": "COMPOSITION",
+            "relationshipLabel":    "__file_system_ftpserver.path",
+            "endDef1": {
+                "type": "ftp_server",
+                "name": "ftpPath",
+                "isContainer": true,
+                "cardinality": "SET",
+                "isLegacyAttribute": true
+            },
+            "endDef2": {
+                "type": "ftp_path",
+                "name": "ftpServer",
+                "isContainer": false,
+                "cardinality": "SINGLE",
+                "isLegacyAttribute": true
+            },
+            "propagateTags": "NONE"
+        },
+        {
+            "name": "ftp_path_file",
+            "serviceType": "file_system",
+            "typeVersion": "1.2",
+            "relationshipCategory": "COMPOSITION",
+            "relationshipLabel":    "__file_system_path.file",
+            "endDef1": {
+                "type": "ftp_path",
+                "name": "ftpFile",
+                "isContainer": true,
+                "cardinality": "SET",
+                "isLegacyAttribute": true
+            },
+            "endDef2": {
+                "type": "ftp_file",
+                "name": "ftpPath",
+                "isContainer": false,
+                "cardinality": "SINGLE",
+                "isLegacyAttribute": true
+            },
+            "propagateTags": "NONE"
+        },
+        {
+            "name": "file_system_file_columns",
+            "serviceType": "file_system",
+            "typeVersion": "1.2",
+            "relationshipCategory": "COMPOSITION",
+            "relationshipLabel":    "__file_system_file.columns",
+            "endDef1": {
+                "type": "ftp_file",
+                "name": "ftpFileColumn",
+                "isContainer": true,
+                "cardinality": "SET",
+                "isLegacyAttribute": true
+            },
+            "endDef2": {
+                "type": "ftp_file_column",
+                "name": "ftpFile",
+                "isContainer": false,
+                "cardinality": "SINGLE",
+                "isLegacyAttribute": true
+            },
+            "propagateTags": "NONE"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+  "classificationDefs": [
+  ],
+  "entityDefs": [
+    {
+      "superTypes": [
+        "Process"
+      ],
+      "serviceType": "file_system",
+      "category": "ENTITY",
+      "name": "datasync_process",
+      "description": "a type definition for etl load script",
+      "typeVersion": "1.0",
+      "attributeDefs": [
+        {
+          "name": "configuration_file",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": false
+        },
+        {
+          "name": "execution_server",
+          "typeName": "ftp_server",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": true
+        },
+        {
+          "name": "run_user",
+          "typeName": "string",
+          "isOptional": true,
+          "cardinality": "SINGLE",
+          "valuesMinCount": 1,
+          "valuesMaxCount": 1,
+          "isUnique": false,
+          "isIndexable": true
+        }
+      ]
+    }
+  ]
+}

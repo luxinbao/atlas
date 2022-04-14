@@ -53,7 +53,7 @@ Build Process
 
    $ export MAVEN_OPTS="-Xms2g -Xmx2g"
    $ mvn clean install
-   $ mvn clean package -Pdist
+   $ mvn clean package -Pdist -DskipTests
 
 3. After above build commands successfully complete, you should see the following files
 
@@ -69,8 +69,9 @@ Build Process
 
 4. For more details on installing and running Apache Atlas, please refer to https://atlas.apache.org/#/Installation
 
-注意修改：
+新增develop 分支 基于tags/release-2.1.0-rc3,代码修改如下：
 
+注意修改：
 
 1、修改代码
 hive-bridge/HiveMetaStoreBridge.java中 修改577 行
@@ -96,3 +97,9 @@ mvn clean -DskipTests package -Pdist,embedded-hbase-solr
 mvn clean -DskipTests package -Pdist
 确认pom文件中hbase-version为:2.1.0-cdh6.3.2 、 solr.version: 7.4.0-cdh6.3.2
 
+
+新增创建实体类型及关系脚本
+./atlas-type-defined/create_typedef.sh
+
+新增删除实体类型脚本
+./atlas-type-defined/delete_typedef.sh
