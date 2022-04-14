@@ -68,3 +68,32 @@ Build Process
    distro/target/apache-atlas-<version>-storm-hook.tar.gz
 
 4. For more details on installing and running Apache Atlas, please refer to https://atlas.apache.org/#/Installation
+
+注意修改：
+
+
+1、修改代码
+hive-bridge/HiveMetaStoreBridge.java中 修改577 行
+``
+String catalogName = hiveDB.getCatalogName() != null ? hiveDB.getCatalogName().toLowerCase() : null;
+改为
+String catalogName = null;
+``
+
+hive/hook/AtlasHiveHookContext.java   修改81行
+``
+this.metastoreHandler = (listenerEvent != null) ? metastoreEvent.getIHMSHandler() : null;
+改为
+this.metastoreHandler = null;
+``
+
+
+
+使用atlas集成的hbase、 solr，打包命令为
+mvn clean -DskipTests package -Pdist,embedded-hbase-solr
+确认修改pom文件中 hbase-version: 2.0.2, solr.version : 7.5.0
+
+使用cdh自带的hbase、solr，打包命令为
+mvn clean -DskipTests package -Pdist
+确认pom文件中hbase-version为:2.1.0-cdh6.3.2 、 solr.version: 7.4.0-cdh6.3.2
+
