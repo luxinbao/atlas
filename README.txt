@@ -88,7 +88,6 @@ this.metastoreHandler = null;
 ``
 
 
-
 使用atlas集成的hbase、 solr，打包命令为
 mvn clean -DskipTests package -Pdist,embedded-hbase-solr
 确认修改pom文件中 hbase-version: 2.0.2, solr.version : 7.5.0
