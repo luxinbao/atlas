@@ -103,3 +103,15 @@ mvn clean -DskipTests package -Pdist
 
 新增删除实体类型脚本
 ./atlas-type-defined/delete_typedef.sh
+
+
+物理删除实体atlas-application.properties设置：
+# Delete handler
+#
+# This allows the default behavior of doing "soft" deletes to be changed.
+#
+# Allowed Values:
+# org.apache.atlas.repository.store.graph.v1.SoftDeleteHandlerV1 - all deletes are "soft" deletes
+# org.apache.atlas.repository.store.graph.v1.HardDeleteHandlerV1 - all deletes are "hard" deletes
+#
+atlas.DeleteHandlerV1.impl=org.apache.atlas.repository.store.graph.v1.HardDeleteHandlerV1
